@@ -1,31 +1,14 @@
-//#include "libft.h"
+#include "libft.h"
 #include <stdio.h>
-#include <string.h>
 
-
-#include <string.h>
-
-int ft_strlen(const char *s)
-{
-    int len;
-    len = 0;
-    while (*s != '\0')
-    {
-        len++;
-        s++;
-    }
-    return len;
-}
 
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
     size_t i;
     size_t aux;
-    size_t aux2;
 
     i = ft_strlen(dst);
     aux = 0;
-    aux2 = 0;
 
     if (dstsize == 0)
         return (ft_strlen(src) + ft_strlen(dst));
