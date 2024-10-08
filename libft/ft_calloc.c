@@ -8,7 +8,7 @@ void	*ft_calloc(size_t count, size_t size)
 	buffer = malloc(count * size);
 	if (buffer == NULL)
 		return (NULL);
-	memset(buffer, 0, sizeof(buffer));
+	ft_memset(buffer, 0, count * size);
 	return (buffer);
 }
 

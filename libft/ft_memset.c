@@ -1,17 +1,17 @@
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t num)
+void *ft_memset(void *ptr, int value, size_t num)
 {
-	size_t			i;
-	unsigned char	*puntero;
+    size_t i;
+    unsigned char *puntero;
 
-	i = 0;
-	*puntero = (unsigned char *)ptr;
-	while (i < num)
-	{
-		*puntero = value;
-		i++;
-		puntero++;
-	}
-	return (ptr);
+    puntero = (unsigned char *)ptr;
+    i = 0;
+
+    while (i < num)
+    {
+        puntero[i] = (unsigned char)value;
+        i++;
+    }
+    return ptr;
 }

@@ -2,26 +2,23 @@
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strnstr(const char *target, const char *abuscar, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
-	size_t	i2;
 
-	if (!abuscar || len == 0)
-		return (NULL);
-	if (*abuscar == '\0')
-		return ((char *)target);
-	i = 0;
-	while (target[i] && i < len)
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (*haystack && len > 0)
 	{
-		i2 = 0;
-		while (target[i + i2] == abuscar[i2] && (i + i2) < len)
+		i = 0;
+		while (haystack[i] == needle[i] && haystack[i] && (len > i))
 		{
-			if (abuscar[i2 + 1] == '\0')
-				return ((char *)&target[i]);
-			i2++;
+			if (needle[i + 1] == '\0')
+				return ((char *)haystack);
+			i++;
 		}
-		i++;
+		haystack++;
+		len--;
 	}
 	return (NULL);
 }

@@ -1,28 +1,23 @@
+#include <string.h>
 #include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strdup(const char *s1)
 {
-	int		len;
-	char	*buffer;
+	char	*dup;
+	size_t	i;
 
-	len = strlen(s1);
-	buffer = malloc(len + 1);
-	if (buffer == NULL)
+	// if (!s1)
+	// 	return (NULL);
+	dup = malloc(ft_strlen(s1) + 1);
+	if (!dup)
 		return (NULL);
-	ft_strcpy(buffer, s1);
-	return (buffer);
+	i = 0;
+	while (s1[i])
+	{
+		dup[i] = s1[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }
-
-// int main(void)
-// {
-
-//     char og[11] = "hola pepe";
-
-//     char *fake = ft_strdup(og);
-
-//     printf("\n%s\n", og);
-//     printf("\n%s\n", fake);
-
-//     return (0);
-// }

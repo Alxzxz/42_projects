@@ -1,38 +1,30 @@
+#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-void	*ft_memmove(void *str1_dest, const void *str2_src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	unsigned char		*dest;
-	const unsigned char	*src = (const unsigned char *)str2_src;
-	size_t				i;
+	unsigned char		*ptr_dest;
+	const unsigned char	*ptr_src;
 
-	dest = (unsigned char *)str1_dest;
-	if (dest == src || n == 0)
-	{
-		return (str1_dest);
-	}
-	if (src < dest && dest < src + n)
-	{
-		i = n;
-		while (i > 0)
-		{
-			i--;
-			dest[i] = src[i];
+	ptr_dest = (unsigned char *)dest;
+	ptr_src = (const unsigned char *)src;
+
+	if (ptr_dest == ptr_src || len == 0)
+		return (dest);
+
+	if (ptr_dest < ptr_src) {
+		size_t i = 0;
+		while (i < len) {
+			ptr_dest[i] = ptr_src[i];
+			i++;
+		}
+	} else {
+		while (len > 0) {
+			len--;
+			ptr_dest[len] = ptr_src[len];
 		}
 	}
-	else
-	{
-		return (ft_memcpy(dest, src, n));
-	}
-	return ((void *)dest);
+
+	return (dest);
 }
-
-// int main() {
-//     char str[] = "Hello World";
-
-//     // Copiar los primeros 5 caracteres a partir de la posición 6
-//     ft_memmove(str + 6, str, 5);
-
-//     printf("%s\n", str);  // Salida: Hello Hello
-//     return (0);
-// }
