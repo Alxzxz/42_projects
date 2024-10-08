@@ -4,8 +4,8 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;
-	size_t	len1, len2, i;
 
+	size_t len1, len2, i;
 	if (!s1 || !s2)
 		return (NULL);
 	len1 = ft_strlen(s1);

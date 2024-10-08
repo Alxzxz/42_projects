@@ -4,9 +4,10 @@
 char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 {
 	char	*result;
-	size_t	i = 0;
+	size_t	i;
 	size_t	len;
 
+	i = 0;
 	if (!s)
 		return (NULL);
 	len = ft_strlen(s);

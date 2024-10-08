@@ -3,8 +3,9 @@
 
 static int	count_digits(int n)
 {
-	int	count = (n <= 0) ? 1 : 0;
+	int	count;
 
+	count = (n <= 0) ? 1 : 0;
 	if (n == -2147483648)
 		return (11);
 	while (n)
@@ -17,8 +18,9 @@ static int	count_digits(int n)
 
 static int	get_exponent(int n)
 {
-	int	exp = 1, digits;
+	int	exp;
 
+	exp = 1, digits;
 	if (n == 0)
 		return (1);
 	if (n == -2147483648)
@@ -33,11 +35,13 @@ static int	get_exponent(int n)
 
 char	*ft_itoa(int n)
 {
-	char		*str;
-	int			exp;
-	int			i = 0;
-	long		copy = n;
+	char	*str;
+	int		exp;
+	int		i;
+	long	copy;
 
+	i = 0;
+	copy = n;
 	exp = get_exponent(n);
 	str = malloc(count_digits(n) + 1);
 	if (!str)

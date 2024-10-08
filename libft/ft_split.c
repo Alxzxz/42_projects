@@ -1,11 +1,12 @@
-#include <string.h>
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
+#include <string.h>
 
 static int	count_words(char const *s1, char c)
 {
-	int	count = 0, in_word = 0;
+	int	count = 0, in_word;
 
+	count = 0, in_word = 0;
 	while (*s1)
 	{
 		if (*s1 == c)
@@ -22,8 +23,9 @@ static int	count_words(char const *s1, char c)
 
 static int	word_length(char const *s2, char c, int index)
 {
-	int	length = 0;
+	int	length;
 
+	length = 0;
 	while (s2[index] && s2[index] != c)
 	{
 		length++;
@@ -42,11 +44,13 @@ static char	**free_memory(char **dst, int count)
 
 static char	**split_words(char const *s, char **dst, char c, int count)
 {
-	int	i = 0, j = 0;
+	int	i = 0, j;
+	int	k;
 
+	i = 0, j = 0;
 	while (s[i] && j < count)
 	{
-		int k = 0;
+		k = 0;
 		while (s[i] == c)
 			i++;
 		dst[j] = malloc(word_length(s, c, i) + 1);
@@ -64,7 +68,7 @@ static char	**split_words(char const *s, char **dst, char c, int count)
 char	**ft_split(char const *s, char c)
 {
 	char	**dst;
-	int	word_count;
+	int		word_count;
 
 	if (!s)
 		return (NULL);
