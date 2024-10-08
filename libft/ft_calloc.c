@@ -3,23 +3,19 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
- char *buffer;
+	char	*buffer;
 
- buffer = malloc(count * size);
- 
- if (buffer == NULL)
-    return NULL;
- 
- memset(buffer, 0, sizeof(buffer));
-
- return buffer;
+	buffer = malloc(count * size);
+	if (buffer == NULL)
+		return (NULL);
+	memset(buffer, 0, sizeof(buffer));
+	return (buffer);
 }
 
 // int main() {
 //     size_t n = 5; // Número de elementos
-//     int *arr = (int *)ft_calloc(n, sizeof(int)); // Asigna memoria para un arreglo de enteros
-
-
+//     int *arr = (int *)ft_calloc(n, sizeof(int));
+// Asigna memoria para un arreglo de enteros
 
 //     // Imprime el arreglo (todos los valores deberían ser cero)
 //     for (size_t i = 0; i < n; i++) {
@@ -27,5 +23,5 @@ void	*ft_calloc(size_t count, size_t size)
 //     }
 
 //     free(arr); // Libera la memoria asignada
-//     return 0;
+//     return (0);
 // }

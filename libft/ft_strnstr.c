@@ -2,32 +2,29 @@
 #include <stdio.h>
 #include <string.h>
 
+char	*ft_strnstr(const char *target, const char *abuscar, size_t len)
+{
+	size_t	i;
+	size_t	i2;
 
-char *ft_strnstr(const char *target, const char *abuscar, size_t len) {
-    if (!target || !abuscar || !*abuscar || len == 0)
-        return NULL;
-    if (!*abuscar)
-        return (char *)target;
-    size_t i = 0;
-
-    while (target[i] && i < len)
-    {
-        size_t i2 = 0;
-
-        while (target[i + i2] == abuscar[i2] && (i + i2) < len)
-        {
-            if (!abuscar[i2 + 1])
-                return (char *)&target[i];
-            i2++;
-        }
-        i++;
-    }
-    return NULL;
+	if (!abuscar || len == 0)
+		return (NULL);
+	if (*abuscar == '\0')
+		return ((char *)target);
+	i = 0;
+	while (target[i] && i < len)
+	{
+		i2 = 0;
+		while (target[i + i2] == abuscar[i2] && (i + i2) < len)
+		{
+			if (abuscar[i2 + 1] == '\0')
+				return ((char *)&target[i]);
+			i2++;
+		}
+		i++;
+	}
+	return (NULL);
 }
-
-
-
-
 
 // char	*ft_strnstr(const char *target, const char *abuscar, size_t len)
 // {
@@ -42,30 +39,30 @@ char *ft_strnstr(const char *target, const char *abuscar, size_t len) {
 //     res = 0;
 
 //     if ( (target == NULL) || (abuscar == NULL) || (*abuscar == '\0'))
-//         return (char *)target;
+//         return ((char *)target);
 //     if (len == 0)
-//         return NULL;
+//         return (NULL);
 
 //     while ((target[i] != '\0') && (i < len))
 //     {
 //         while (target[i] == abuscar[i2])
 //         {
-//             res = ubi; 
+//             res = ubi;
 //             i++;
 //             i2++;
 //             if (abuscar[i2] == '\0')
-//                 return (char *)&target[res];
+//                 return ((char *)&target[res]);
 //         }
 //         i2 = 0;
 //         i++;
 //         ubi = i;
 //     }
-//     return NULL;
+//     return (NULL);
 // }
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 // int main() {
 //     // Caso 1: Subcadena encontrada
 //     {
@@ -151,5 +148,5 @@ char *ft_strnstr(const char *target, const char *abuscar, size_t len) {
 //         }
 //     }
 
-//     return 0;
+//     return (0);
 // }

@@ -1,19 +1,17 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char    *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-int len;
-char *buffer;
+	int		len;
+	char	*buffer;
 
-len = strlen(s1);
-buffer = malloc(len + 1);
-
-if (buffer == NULL)
-    return NULL;
-
-ft_strcpy(buffer, s1);
-return buffer;
+	len = strlen(s1);
+	buffer = malloc(len + 1);
+	if (buffer == NULL)
+		return (NULL);
+	ft_strcpy(buffer, s1);
+	return (buffer);
 }
 
 // int main(void)
@@ -26,5 +24,5 @@ return buffer;
 //     printf("\n%s\n", og);
 //     printf("\n%s\n", fake);
 
-//     return 0;
+//     return (0);
 // }
