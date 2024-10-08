@@ -8,7 +8,7 @@ char *ft_strchr(const char *s, int c)
             break;
         s++;
     }
-    if (*s == '\0')
+    if (*s == '\0' && c != '\0')
         return NULL;
     return (char *)s;
 }

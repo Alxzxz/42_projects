@@ -5,6 +5,8 @@
 
 char *ft_strnstr(const char *target, const char *abuscar, size_t len) {
     if (!target || !abuscar || !*abuscar || len == 0)
+        return NULL;
+    if (!*abuscar)
         return (char *)target;
     size_t i = 0;
 
