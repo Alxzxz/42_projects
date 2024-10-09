@@ -11,78 +11,82 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-static int	count_words(char const *s1, char c)
+char	*ft_strndup(const char *s, size_t n)
 {
-	int	count;
-	int	in_word;
+	size_t	i;
+	char	*str;
 
-	count = 0;
-	in_word = 0;
-	while (*s1)
+	i = 0;
+	str = NULL;
+	if (n == 0)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (n + 1));
+	if (str == 0)
+		return (NULL);
+	while (i < n)
 	{
-		if (*s1 == c)
-			in_word = 0;
-		else if (in_word == 0)
-		{
-			in_word = 1;
-			count++;
-		}
-		s1++;
+		str[i] = s[i];
+		i++;
 	}
-	return (count);
+	str[i] = '\0';
+	return (str);
 }
 
-static char	**free_memory(char **dst, int count)
+char	**ft_freeall(char **list)
 {
-	while (count > 0)
+	size_t	j;
+
+	j = 0;
+	while (list[j])
 	{
-		free(dst[--count]);
+		free(list[j]);
+		j++;
 	}
-	free(dst);
+	free(list);
 	return (NULL);
 }
 
-static char	**split_words(char const *s, char **dst, char c, int count)
+size_t	ft_wordcount(char const *s, char c)
 {
-	int	i;
-	int	j;
-	int	k;
+	size_t	listsize;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	while (s[i] && j < count)
+	listsize = 0;
+	while (s[i] != '\0')
 	{
-		k = 0;
-		while (s[i] == c)
-			i++;
-		dst[j] = malloc(word_length(s, c, i) + 1);
-		if (!dst[j])
-			return (free_memory(dst, j));
-		while (s[i] && s[i] != c)
-		{
-			dst[j][k] = s[i];
-			k++;
-			i++;
-		}
-		dst[j][k] = '\0';
-		j++;
+		if ((i == 0 && s[i] != c) || \
+		(s[i] == c && s[i + 1] != '\0' && s[i + 1] != c))
+			listsize++;
+		i++;
 	}
-	dst[j] = NULL;
-	return (dst);
+	return (listsize);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**dst;
-	int		word_count;
+	char	**strlist;
+	size_t	i;
+	size_t	k;
+	size_t	save;
 
-	if (!s)
+	i = 0;
+	k = 0;
+	strlist = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
+	if (!strlist)
 		return (NULL);
-	word_count = count_words(s, c);
-	dst = malloc(sizeof(char *) * (word_count + 1));
-	if (!dst)
-		return (NULL);
-	return (split_words(s, dst, c, word_count));
+	while (i < ft_wordcount(s, c) && s[k] != '\0')
+	{
+		while (s[k] == c)
+			k++;
+		save = k;
+		while (s[k] != c && s[k] != '\0')
+			k++;
+		strlist[i] = ft_strndup(&s[save], k - save);
+		if (strlist[i++] == 0)
+			return (ft_freeall(strlist));
+	}
+	strlist[i] = NULL;
+	return (strlist);
 }

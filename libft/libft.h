@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <string.h>
+# include <stdlib.h>
 
 void				*ft_memset(void *b, int c, size_t len);
 size_t				ft_strlen(const char *s);
