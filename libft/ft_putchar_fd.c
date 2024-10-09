@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoyo-ar < amoyo-ar@student.42madrid.co    +#+  +:+       +#+        */
+/*   By: amoyo-ar < amoyo-ar@student.42madrid.com   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:04:44 by amoyo-ar          #+#    #+#             */
 /*   Updated: 2024/10/09 17:26:10 by amoyo-ar         ###   ########.fr       */

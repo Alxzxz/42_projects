@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoyo-ar < amoyo-ar@student.42madrid.co    +#+  +:+       +#+        */
+/*   By: amoyo-ar < amoyo-ar@student.42madrid.com   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:04:44 by amoyo-ar          #+#    #+#             */
 /*   Updated: 2024/10/09 17:19:24 by amoyo-ar         ###   ########.fr       */
