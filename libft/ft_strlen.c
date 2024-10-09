@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amoyo-ar < amoyo-ar@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:04:44 by amoyo-ar          #+#    #+#             */
-/*   Updated: 2024/10/09 12:04:47 by amoyo-ar         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:21:11 by amoyo-ar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
-	int	size_t;
+	size_t	size;
 
-	size_t = 0;
+	size = 0;
 	while (*s != '\0')
 	{
-		size_t++;
+		size++;
 		s++;
 	}
-	return (size_t);
+	return (size);
 }

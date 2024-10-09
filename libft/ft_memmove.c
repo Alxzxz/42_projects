@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amoyo-ar < amoyo-ar@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:04:44 by amoyo-ar          #+#    #+#             */
-/*   Updated: 2024/10/09 12:04:47 by amoyo-ar         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:48:32 by amoyo-ar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "libft.h"
 
 #include "libft.h"
-#include <stdlib.h>
-#include <string.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
 	unsigned char		*ptr_dest;
 	const unsigned char	*ptr_src;
-	size_t				i;
 
 	ptr_dest = (unsigned char *)dest;
 	ptr_src = (const unsigned char *)src;
@@ -28,19 +25,18 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 		return (dest);
 	if (ptr_dest < ptr_src)
 	{
-		i = 0;
-		while (i < len)
+		while (len--)
 		{
-			ptr_dest[i] = ptr_src[i];
-			i++;
+			*ptr_dest++ = *ptr_src++;
 		}
 	}
 	else
 	{
-		while (len > 0)
+		ptr_dest += len;
+		ptr_src += len;
+		while (len--)
 		{
-			len--;
-			ptr_dest[len] = ptr_src[len];
+			*(--ptr_dest) = *(--ptr_src);
 		}
 	}
 	return (dest);

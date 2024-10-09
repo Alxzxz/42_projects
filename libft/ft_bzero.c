@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amoyo-ar < amoyo-ar@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:04:44 by amoyo-ar          #+#    #+#             */
-/*   Updated: 2024/10/09 12:04:47 by amoyo-ar         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:11:38 by amoyo-ar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "libft.h"
 
 void	ft_bzero(void *ptr, size_t num)
-
 {
-	size_t i;
+	size_t			i;
+	unsigned char	*puntero;
+
 	i = 0;
-
-	unsigned char *puntero = (unsigned char *)ptr;
-
+	puntero = (unsigned char *)ptr;
 	while (i < num)
 	{
 		*puntero = '\0';
@@ -29,3 +26,20 @@ void	ft_bzero(void *ptr, size_t num)
 		puntero++;
 	}
 }
+
+// #include "libft.h"
+
+// void	ft_bzero(void *ptr, size_t num)
+// {
+// 	size_t			i;
+// 	unsigned char	*puntero;
+
+// 	*puntero = (unsigned char *)ptr;
+// 	i = 0;
+// 	while (i < num)
+// 	{
+// 		*puntero = '\0';
+// 		i++;
+// 		puntero++;
+// 	}
+// }

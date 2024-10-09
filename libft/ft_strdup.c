@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amoyo-ar < amoyo-ar@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:04:44 by amoyo-ar          #+#    #+#             */
-/*   Updated: 2024/10/09 12:04:47 by amoyo-ar         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:23:07 by amoyo-ar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "libft.h"
 #include <stdlib.h>
@@ -21,8 +19,6 @@ char	*ft_strdup(const char *s1)
 	char	*dup;
 	size_t	i;
 
-	// if (!s1)
-	// 	return (NULL);
 	dup = malloc(ft_strlen(s1) + 1);
 	if (!dup)
 		return (NULL);
