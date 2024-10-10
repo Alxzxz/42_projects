@@ -14,13 +14,33 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	char	a;
+
+	a = c;
 	while (*s)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
+		if (*s == a)
+		{
+			return ((char *) s);
+		}
 		s++;
 	}
-	if (c == '\0')
-		return ((char *)s);
+	if (a == '\0')
+		return ((char *) s);
 	return (NULL);
 }
+
+// int main()
+// {
+//     const char *cadena = "Hola, mundo";
+//     char caracter = 'ñ';
+//     char *resultado = ft_strchr(cadena, caracter);
+
+//     if (resultado != NULL) {
+//         printf("Caracter '%c' encontrado", resultado);
+//     } else {
+//         printf("Caracter '%c' no encontrado\n", caracter);
+//     }
+
+//     return 0;
+// }
